@@ -9,9 +9,10 @@ from Common.BasePage import *
 
 
 class login(BasePage):
-    account='//input[@placeholder="用户名"]'
-    pwd='//input[@placeholder="密码"]'
-    login_button='//span[text()="登录"]/..'
+    #北邮平台
+    account='//input[@placeholder="请输入登录帐号"]'
+    pwd='//input[@placeholder="请输入登录密码"]'
+    login_button='//button[text()="登录"]'
 
 
 

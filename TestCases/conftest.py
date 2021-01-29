@@ -58,7 +58,7 @@ def login_web():
         # driver = webdriver.Chrome()
         option = webdriver.ChromeOptions()
         option.add_argument('--headless')
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome('C:/E/autotest/webdriver/chromedriver')
     else:
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
@@ -67,7 +67,7 @@ def login_web():
         driver = webdriver.Chrome('/home/ubuntu/Documents/chromedriver', options=options)
     driver.maximize_window()
     driver.get(datas['url'])
-    login(driver).login_system(datas['account'],datas['pwd'])
+    login(driver).login_system(datas['usname'],datas['pwd'])
     yield driver
     driver.quit()
 
@@ -98,7 +98,7 @@ def pytest_runtest_makereport(item):
 
 def capture_screenshot():
     '''截图保存为base64'''
-    return driver.get_screenshot_as_base64()
+    return #driver.get_screenshot_as_base64()
 
 
 def pytest_configure(config):

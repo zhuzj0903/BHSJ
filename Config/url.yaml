@@ -1,4 +1,11 @@
+#北京邮电大学导师门户:
 -
- url: http://10.10.1.25:9910/#/monitor
- usname: admin
- pwd: "!Pensees"
+ url: http://yanshi.casdc.com?site_id=109
+ usname: 2010810769
+ pwd: 2010810769
+
+#南京工业大学绩效管理平台:
+-
+  url: jxgl.njtech.edu.cn
+  usname: jxadmin
+  pwd: Jx123321
