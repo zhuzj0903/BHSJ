@@ -18,12 +18,12 @@ config_dir=os.path.join(base_dir,'Config')
 htmltestreport_dir=os.path.join(base_dir,'HtmlTestReport')
 
 if sys.platform == "win32":
-    processlog_dir = os.path.join(base_dir,'logs\\processlog')
+    processlog_dir = os.path.join(base_dir,'Logs\\processlog')
 else:
     processlog_dir = os.path.join(base_dir,'Logs/processlog')
 
 if sys.platform =='win32':
-    resultlog_dir = os.path.join(base_dir,'logs\\resultlog')
+    resultlog_dir = os.path.join(base_dir,'Logs\\resultlog')
 else:
     resultlog_dir = os.path.join(base_dir, 'Logs/resultlog')
 

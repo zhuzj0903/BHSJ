@@ -1,6 +1,6 @@
 #北京邮电大学导师门户:
 -
- server: 116.63.56.139:3306 # 服务器名称
+ server: 116.63.56.139 # 服务器名称
  user: root  # 登录名
- password: 18iBH9#8z@pure_pro # 登录密码
+ password: 18iBH9#8z@pure_pro; # 登录密码
  database: scibox_bupt # 数据库名
