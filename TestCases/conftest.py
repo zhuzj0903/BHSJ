@@ -55,14 +55,13 @@ def init_web():
 def login_web():
     global driver
     if sys.platform =='win32':
-        # driver = webdriver.Chrome()
         option = webdriver.ChromeOptions()
         option.add_argument('--headless')
-        driver = webdriver.Chrome('C:/E/autotest/webdriver/chromedriver')
+        driver = webdriver.Chrome(options=option)
     else:
         options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        options.add_argument('--isable-gpu')
+        options.add_argument('--headless') # 浏览器不提供可视化页面
+        options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         driver = webdriver.Chrome('/home/ubuntu/Documents/chromedriver', options=options)
     driver.maximize_window()
