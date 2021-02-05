@@ -35,7 +35,7 @@ def init_web():
         # driver = webdriver.Chrome()
         option = webdriver.ChromeOptions()
         option.add_argument('--headless')
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(options=option)
     else:
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
@@ -74,9 +74,9 @@ def login_web():
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """当测试失败的时候，自动截图，展示到html报告中"""
-    outcome = yield
-    pytest_html = item.config.pluginmanager.getplugin('html')
 
+    pytest_html = item.config.pluginmanager.getplugin('html')
+    outcome = yield
     report = outcome.get_result()
     extra = getattr(report, 'extra', [])
     # 如果你生成的是web ui自动化测试，请把下面的代码注释打开，否则无法生成错误截图
@@ -92,12 +92,12 @@ def pytest_runtest_makereport(item):
         report.extra = extra
     extra.append(pytest_html.extras.text('some string', name='Different title'))
     report.description = str(item.function.__doc__)
-    # report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
+        # report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
 
 
 def capture_screenshot():
     '''截图保存为base64'''
-    return #driver.get_screenshot_as_base64()
+    return driver.get_screenshot_as_base64()
 
 
 def pytest_configure(config):

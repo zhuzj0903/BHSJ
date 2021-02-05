@@ -10,6 +10,7 @@ from Common.log import Log
 from Common import dir_config
 from PageObjects.index.firstpage import First_Page
 from Common.read_config import Read_Config as R
+from TestDatas.北京邮电大学导师门户.首页 import zonglan_sql as Z
 
 #从配置文件中获取测试数据，和html配置数据
 datas = R(dir_config.config_dir,'mysql.yaml')
@@ -21,6 +22,8 @@ R_log = Log(dir_config.resultlog_dir)
 @pytest.mark.usefixtures("login_web")
 class Test_firstpage:
     def test_zonglan(self,login_web):
+        # 动态添加description中的内容
+        self.test_zonglan.__func__.__doc__ = Z['dec']
         P_log.info("*********开始执行总览数据校验********")
         r=First_Page(login_web).get_zonglan()
         s=First_Page(login_web).sql_zonglan()

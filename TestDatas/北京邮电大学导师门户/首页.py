@@ -22,4 +22,4 @@ zonglan_sql={'导师年限':'',
                     "on a.uid=b.uid where a.gzzh='2010810769') b ",
 
              "发明专利":"select count(*) as '专利数' from n109_t_js_jbxx_jbxx a INNER JOIN n109_t_js_kyqk_sqzlqk b "
-                    "on a.uid=b.uid where a.gzzh='2010810769'"}
+                    "on a.uid=b.uid where a.gzzh='2010810769'",'dec':'首页总览数据校验测试'}
